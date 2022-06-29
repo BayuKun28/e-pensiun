@@ -51,6 +51,8 @@ class Pegawai extends CI_Controller
             'pangkat' => $this->input->post('pangkat')
         );
         $this->db->insert('pegawai', $data);
+        $usia = $this->usiapensiun_model->getUsia()->usia;
+        $updatesemuapegawai = $this->usiapensiun_model->updateallpegawai($usia);
         $this->session->set_flashdata('message', 'Berhasil Ditambah');
         redirect('Pegawai');
     }
@@ -82,6 +84,8 @@ class Pegawai extends CI_Controller
         );
         $this->db->where('id', $id);
         $this->db->update('pegawai', $data);
+        $usia = $this->usiapensiun_model->getUsia()->usia;
+        $updatesemuapegawai = $this->usiapensiun_model->updateallpegawai($usia);
         $this->session->set_flashdata('message', 'Berhasil Di Update');
         redirect('Pegawai');
     }

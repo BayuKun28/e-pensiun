@@ -18,4 +18,13 @@ class Tandatangan_model extends CI_Model
         return $this->db->query($query)->row_array();
         echo json_encode($query);
     }
+    public function updateallttd()
+    {
+        $query = "
+
+        UPDATE jabatan j SET j.ttd = 0
+
+        ";
+        return $this->db->query($query);
+    }
 }

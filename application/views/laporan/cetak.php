@@ -7,11 +7,11 @@
 </head>
 
 <body>
-    <div style="width:auto; margin: auto;">
+    <div>
         <center>
             <h3>Laporan Data Pensiun </h3>
             <h3> <?= $xthn; ?></h3>
-            <table border="1" width="100%">
+            <table border="1" width="100%" style="border-collapse:collapse;">
                 <thead>
                     <tr>
                         <th>No</th>

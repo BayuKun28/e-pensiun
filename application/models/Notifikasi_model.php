@@ -10,7 +10,7 @@ class Notifikasi_model extends CI_Model
                     p2.nip,
                     p2.jk,
                     p2.tgl_lahir,
-                    (DATE_ADD(p2.tgl_lahir, INTERVAL $usia YEAR)) as tgl_pensiun,
+                    p2.tgl_pensiun,
                     p2.alamat,
                     p2.jabatan as idjabatan,
                     j.jabatan,
@@ -18,7 +18,7 @@ class Notifikasi_model extends CI_Model
                     (TIMESTAMPDIFF(MONTH,NOW(),(DATE_ADD(p2.tgl_lahir, INTERVAL $usia YEAR)))) AS selisih_bulan
                 FROM  pegawai p2 
                 LEFT JOIN jabatan j on j.id = p2.jabatan
-             WHERE (TIMESTAMPDIFF(MONTH,NOW(),(DATE_ADD(p2.tgl_lahir, INTERVAL 56 YEAR)))) <=12 AND (TIMESTAMPDIFF(MONTH,NOW(),(DATE_ADD(p2.tgl_lahir, INTERVAL $usia YEAR)))) >= 1
+             WHERE (TIMESTAMPDIFF(MONTH,NOW(),(DATE_ADD(p2.tgl_lahir, INTERVAL $usia YEAR)))) <=12 AND (TIMESTAMPDIFF(MONTH,NOW(),(DATE_ADD(p2.tgl_lahir, INTERVAL $usia YEAR)))) >= 1
              ORDER BY selisih_bulan ASC
              LIMIT 5
 

@@ -23,12 +23,14 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-body">
+                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalatur">
+                        <i class="fas fa-pencil-alt"></i> Atur
+                    </button>
                     <table id="tabledata" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Jabatan</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,9 +39,6 @@
                                 <tr>
                                     <td><?= $i; ?></td>
                                     <td><?= $b['jabatan']; ?></td>
-                                    <td>
-                                        <a id="edit" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit" data-idedit="<?= $b['id']; ?>" data-jabatanedit="<?= $b['jabatan']; ?>"><i class="fas fa-pencil-alt"></i></a>
-                                    </td>
                                 </tr>
                                 <?php $i++; ?>
                             <?php endforeach; ?>
@@ -57,7 +56,7 @@
 </section>
 <!-- /.content -->
 </div>
-<div class="modal fade" id="modal-edit">
+<div class="modal fade" id="modalatur">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -69,7 +68,6 @@
             <form action="<?= base_url('Tandatangan/edit'); ?>" method="POST">
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="hidden" class="form-control" id="idedit" name="idedit">
                         <label>Jabatan</label>
                         <select id="jabatanedit" name="jabatanedit" class="itemJabatan form-control select2" style="width: 100%;" required>
                         </select>

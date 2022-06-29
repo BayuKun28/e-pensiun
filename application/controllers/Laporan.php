@@ -126,7 +126,7 @@ class Laporan extends CI_Controller
     {
         $id = $this->input->post('idverifikasi');
         $data = array(
-            'bt' => $this->input->post('vverifikasi')
+            'bt' => $this->input->post('verifikasi')
         );
         $this->db->where('id', $id);
         $this->db->update('pegawai', $data);

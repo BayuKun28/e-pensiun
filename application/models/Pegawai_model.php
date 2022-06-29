@@ -5,7 +5,7 @@ class Pegawai_model extends CI_Model
 {
     public function read()
     {
-        $query = "SELECT p.id,p.nama_pegawai,p.nip,p.tgl_lahir,p.jabatan as idjabatan,j.jabatan,p.jk,p.alamat,p.pangkat as idpangkat,pa.pangkat
+        $query = "SELECT p.id,p.nama_pegawai,p.nip,p.tgl_lahir,p.tgl_pensiun,p.jabatan as idjabatan,j.jabatan,p.jk,p.alamat,p.pangkat as idpangkat,pa.pangkat
                     FROM pegawai p 
                     LEFT JOIN jabatan j on j.id = p.jabatan
                     LEFT JOIN pangkat pa on pa.id = p.pangkat

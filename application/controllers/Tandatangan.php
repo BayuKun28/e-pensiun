@@ -30,12 +30,7 @@ class Tandatangan extends CI_Controller
     }
     public function edit()
     {
-        $id = $this->input->post('idedit');
-        $data = array(
-            'ttd' => 0
-        );
-        $this->db->where('id', $id);
-        $this->db->update('jabatan', $data);
+        $updateset0 = $this->tandatangan_model->updateallttd();
 
         $idedit = $this->input->post('jabatanedit');
         $data2 = array(

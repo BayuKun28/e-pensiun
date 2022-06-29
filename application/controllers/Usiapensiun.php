@@ -43,6 +43,8 @@ class Usiapensiun extends CI_Controller
         );
         $this->db->where('id', $id);
         $this->db->update('usia_pensiun', $data);
+        $usia = $this->usiapensiun_model->getUsia()->usia;
+        $updatesemuapegawai = $this->usiapensiun_model->updateallpegawai($usia);
         $this->session->set_flashdata('message', 'Berhasil Di Update');
         redirect('Usiapensiun');
     }

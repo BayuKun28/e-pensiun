@@ -14,4 +14,15 @@ class Usiapensiun_model extends CI_Model
         $this->db->select('usia');
         return $this->db->get('usia_pensiun')->row();
     }
+    public function updateallpegawai($usia)
+    {
+        $query = "
+
+        UPDATE pegawai p 
+        JOIN pegawai p2 ON p2.id = p.id
+        SET p.tgl_pensiun = (DATE_ADD(p2.tgl_lahir, INTERVAL $usia YEAR))
+
+        ";
+        return $this->db->query($query);
+    }
 }
