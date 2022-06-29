@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 12, 2022 at 12:02 PM
+-- Generation Time: Jun 29, 2022 at 10:27 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -99,23 +99,25 @@ CREATE TABLE IF NOT EXISTS `pegawai` (
   `nip` varchar(255) NOT NULL,
   `jk` varchar(255) NOT NULL,
   `tgl_lahir` date NOT NULL,
+  `tgl_pensiun` date DEFAULT NULL,
   `alamat` varchar(255) NOT NULL,
   `jabatan` int(11) NOT NULL,
   `pangkat` int(11) NOT NULL,
   `bt` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pegawai`
 --
 
-INSERT INTO `pegawai` (`id`, `nama_pegawai`, `nip`, `jk`, `tgl_lahir`, `alamat`, `jabatan`, `pangkat`, `bt`) VALUES
-(1, 'Bayu Prastyo', '111.111.111.111', 'Laki-laki', '2018-03-28', 'Tawangmangu', 2, 3, 0),
-(2, 'Esti Setyaningrum', '111.111.112.112', 'Perempuan', '2001-03-17', 'Mojogedang', 2, 0, 0),
-(6, 'Solikin', '555.5555.555.555', 'Laki-laki', '1967-06-11', 'gatau', 2, 0, 0),
-(7, 'Sofian', '333.333.333.333', 'Laki-laki', '1950-01-16', 'Denpasar', 2, 3, 2),
-(8, 'Sri Sulastri, S.Sos', '19690127 199103 2 001', 'Laki-laki', '1986-08-20', 'Alamat', 4, 1, 0);
+INSERT INTO `pegawai` (`id`, `nama_pegawai`, `nip`, `jk`, `tgl_lahir`, `tgl_pensiun`, `alamat`, `jabatan`, `pangkat`, `bt`) VALUES
+(1, 'Bayu Prastyo', '111.111.111.111', 'Laki-laki', '2018-03-28', '2074-03-28', 'Tawangmangu', 2, 3, 0),
+(2, 'Esti Setyaningrum', '111.111.112.112', 'Perempuan', '2001-03-17', '2057-03-17', 'Mojogedang', 2, 0, 0),
+(6, 'Solikin', '555.5555.555.555', 'Laki-laki', '1967-06-11', '2023-06-11', 'gatau', 2, 0, 0),
+(7, 'Sofian', '333.333.333.333', 'Laki-laki', '1950-01-16', '2006-01-16', 'Denpasar', 2, 3, 2),
+(8, 'Sri Sulastri, S.Sos', '19690127 199103 2 001', 'Laki-laki', '1986-08-20', '2042-08-20', 'Alamat', 4, 1, 0),
+(10, 'Nurdin aja', '19690127 199103 2 009', 'Laki-laki', '2000-01-01', '2056-01-01', 'Jumantono', 1, 1, 0);
 
 -- --------------------------------------------------------
 
